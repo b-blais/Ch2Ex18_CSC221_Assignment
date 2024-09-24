@@ -1,5 +1,5 @@
 /*
-Title: Chapter 2 Exercise 18 - Energy Drink Consumption Part A
+Title: Chapter 2 Exercise 18 - Energy Drink Consumption Part B
 File Name : Chapter2Exercise18_Brion_Blais
 Programmer : Brion Blais
 Date : 09 / 2024
@@ -20,15 +20,20 @@ using namespace std;
 
 int main()
 {
-    const int SURVEY_SIZE = 16500;
     const double PERCENT_THAT_BUY_WEEKLY = 0.15;
     const double PERCENT_THAT_PREFER_CITRUS = 0.58;
-    
+
+    int surveySize;
+
+    // Without using a while loop to validate input, this should prompt the user to enter a whole person.
+    cout << "Please enter the survey size as a whole integer. i.e. 6000\n";
+    cin >> surveySize;
+
     // Using int despite the percentages being doubles, as the return is an approximation and you shouldn't have fractional people.
-    int customersWhoPurchase = SURVEY_SIZE * PERCENT_THAT_BUY_WEEKLY;
+    int customersWhoPurchase = surveySize * PERCENT_THAT_BUY_WEEKLY;
     int customersThatPreferCitrus = customersWhoPurchase * PERCENT_THAT_PREFER_CITRUS;
 
-    cout << "Of the " << SURVEY_SIZE << " surveyed, approximately " << customersWhoPurchase << " purchase one or more energy drinks per week.\n";
+    cout << "Of the " << surveySize << " surveyed, approximately " << customersWhoPurchase << " purchase one or more energy drinks per week.\n";
     cout << "In turn, approximately " << customersThatPreferCitrus << " of those prefer citrus-flavored energy drinks.\n";
 
     return 0;
